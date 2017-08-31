@@ -9,8 +9,7 @@
 pids
 logs
 results
-*.graffle
-npm-debug.log
-/node_modules/
-/document/
+
+node_modules/
+document/
 public/libs/
