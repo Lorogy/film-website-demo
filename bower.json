@@ -1,0 +1,24 @@
+{
+  "name": "film-website-demo",
+  "homepage": "https://github.com/Lorogy/film-website-demo",
+  "authors": [
+    "Lorogy <18811346735@163.com>"
+  ],
+  "description": "film website test",
+  "main": "",
+  "keywords": [
+    "film"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
