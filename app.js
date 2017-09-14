@@ -50,4 +50,5 @@ if('development'===app.get('env')){
 require('./config/routes')(app)
 
 console.log('film website started on port '+port)
+console.log('********************')
 

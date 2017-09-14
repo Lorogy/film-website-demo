@@ -2,19 +2,15 @@ var mongoose=require('mongoose')
 var Schema=mongoose.Schema
 var ObjectId=Schema.Types.ObjectId
 
-var MovieSchema=new Schema({
-	doctor:String,
-	title:String,
-	language:String,
-	country:String,
-	summary:String,
-	flash:String,
-	poster:String,
-	year:Number,
-	category:{
-		type:ObjectId,
-		ref:'Category'
-	},
+var CommentSchema=new Schema({
+	movie:{type:ObjectId,ref:'Movie'},
+	from:{type:ObjectId,ref:'User'},
+	reply:[{
+		from:{type:ObjectId,ref:'User'},
+		to:{type:ObjectId,ref:'User'},
+		content:String
+	}],
+	content:String,
 	meta:{
 		createAt:{
 			type:Date,
@@ -27,7 +23,7 @@ var MovieSchema=new Schema({
 	}
 })
 
-MovieSchema.pre('save',function(next){
+CommentSchema.pre('save',function(next){
 	if(this.isNew){
 		this.meta.createAt=this.meta.updateAt=Date.now()
 	}
@@ -38,7 +34,7 @@ MovieSchema.pre('save',function(next){
 	next()
 })
 
-MovieSchema.statics={
+CommentSchema.statics={
 	fetch: function(cb){
 		return this.find({}).sort('meta.updateAt').exec(cb)
 	},
@@ -47,4 +43,4 @@ MovieSchema.statics={
 	}
 }
 
-module.exports=MovieSchema
+module.exports=CommentSchema

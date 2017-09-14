@@ -2,13 +2,13 @@ module.exports=function(grunt){
 	grunt.initConfig({
 		watch:{
 			jade:{
-				files:['views/**'],
+				files:['app/views/**'],
 				options:{
 					livereload:true
 				}
 			},
 			js:{
-				files:['public/js/**','models/**/*.js','schemas/**/*.js'],
+				files:['public/js/*.js','app/models/*.js','app/schemas/*.js','app/controllers/*.js','config/*.js','app.js'],
 				//tasks:['jsint'],
 				options:{
 					livereload:true
@@ -18,24 +18,25 @@ module.exports=function(grunt){
 
 		nodemon:{
 			dev:{
-				script:'app.js',
+				script:'./app.js',
 				options:{
 					args:['dev'],//args:[]
 					nodeArgs: ['--debug'],
 					ignore:['README.md','node_modules/**','.DS_Store'],
 					watch:['./'],
+					legacyWatch: true,
 					delay:1000,
 					env:{
 						PORT:'3000'
 					},
 					cwd:__dirname
-				}
+				 }
 			}
 		},
 
 		concurrent:{
 			target:{
-				tasks:['nodemon','watch'],
+				tasks:['watch','nodemon'],
 				options:{
 					logConcurrentOutput:true
 				}
