@@ -13,6 +13,12 @@ module.exports=function(grunt){
 				options:{
 					livereload:true
 				}
+			},
+			css:{
+				files:['public/css/*.css'],
+				options:{
+					livereload:true
+				}
 			}
 		},
 

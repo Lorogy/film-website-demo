@@ -40,6 +40,10 @@ module.exports=function(app){
 	app.post('/admin/category',User.signinRequired,User.adminRequired,Category.save)
 	app.get('/admin/category/new',User.signinRequired,User.adminRequired,Category.new)
 	app.get('/admin/category/list',User.signinRequired,User.adminRequired,Category.list)
+
+	//results
+	app.get('/results',Index.search)
 }
+
 
 
