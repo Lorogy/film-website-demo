@@ -2,6 +2,8 @@ var Movie=require('../models/movie')
 var Comment=require('../models/comment')
 var Category=require('../models/category')
 var _=require('underscore')
+var fs=require('fs')
+var path=require('path')
 
 //detail page
 exports.detail=function(req,res){
@@ -15,6 +17,12 @@ exports.detail=function(req,res){
 				comments:comments
 			})
 		})*/
+
+	Movie.update({_id:id},{$inc:{pv:1}},function(err){
+		if(err){
+			console.log(err)
+		}
+	})
 
 	Movie.findById(id,function(err,movie){
 		if(err){
@@ -67,11 +75,41 @@ exports.update=function(req,res){
 	}
 }
 
+//admin poster
+exports.savePoster=function(req,res,next){
+	var posterData=req.files.uploadPoster
+	var filePath=posterData.path
+	var originalFilename=posterData.originalFilename
+	//console.log(posterData)
+
+	if(originalFilename){
+		fs.readFile(filePath,function(err,data){
+			var timeStamp=Date.now()
+			var type=posterData.type.split('/')[1]
+			var poster=timeStamp+'.'+type
+			var newPath=path.join(__dirname,'../../','public/upload/'+poster)
+			//console.log(newPath)
+
+			fs.writeFile(newPath,data,function(err){
+				req.poster=poster
+				next()
+			})
+		})
+	}
+	else{
+		next()
+	}
+}
+
 //admin post movie
 exports.save=function(req,res){	
 	var movieObj=req.body.movie
 	var id=movieObj._id
 	var _movie
+
+	if(req.poster){
+		movieObj.poster=req.poster
+	}
 
 	if(id){
 		Movie.findById(id,function(err,movie){
@@ -122,7 +160,7 @@ exports.save=function(req,res){
 					})	
 				})			
 			}	
-			else{
+			//else{
 				// var category=new Category({
 				// 	name:"其他",
 				// 	movies:[movie._id]
@@ -134,7 +172,7 @@ exports.save=function(req,res){
 				// 		res.redirect('/movie/'+movie._id)
 				// 	})	
 				// })	
-			}				
+			//}				
 		})
 	}
 }

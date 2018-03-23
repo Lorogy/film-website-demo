@@ -14,6 +14,10 @@ block content
                 .col-md-2
                   .thumbnail
                     a(href="/movie/#{item._id}")
-                      img(src="#{item.poster}",alt="#{item.title}",style="width:150px;height:150px;")
-                      h3 #{item.title}
-                      p: a.btn.btn-primary(href="/movie/#{item._id}",role="button") 观看预告片
+                      if item.poster.indexOf('http')>-1
+                        img(src="#{item.poster}",alt="#{item.title}",style="width:150px;height:150px;")
+                      else 
+                        img(src="/upload/#{item.poster}",alt="#{item.title}",style="width:150px;height:150px;")
+                      .caption
+                        h3 #{item.title}
+                        p: a.btn.btn-primary(href="/movie/#{item._id}",role="button") 观看预告片
