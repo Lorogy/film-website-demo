@@ -16,6 +16,7 @@ mongoose.Promise = global.Promise
 mongoose.connect(dbUrl, {
     useMongoClient: true
 })
+//连接本地数据库
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'Mongodb connect error !'))
 db.once('open', function() {

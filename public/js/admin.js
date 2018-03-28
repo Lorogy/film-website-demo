@@ -1,3 +1,4 @@
+//删除当前列表并通过后台接口删除数据库记录
 $(function (){
 	$('.del').click(function (e){
 		var target = $(e.target)

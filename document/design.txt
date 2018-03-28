@@ -1,0 +1,11 @@
+后端 nodejs express
+     mongodb mongoose
+     jade
+     moment.js
+前端 bower
+     jquery&bootstrap
+本地开发环境 grunt
+             less cssmin jshint uglifyjs mocha nodemon
+
+首页（详情页）
+后台录入页

@@ -66,8 +66,8 @@ module.exports=function(grunt){
 			dev:{
 				script:'./app.js',
 				options:{
-					args:['dev'],//args:[]
-					nodeArgs: ['--debug'],
+					args:['dev'],//args:[],
+					//nodeArgs: ['--debug'],//--debug会出错
 					ignore:['README.md','node_modules/**','.DS_Store'],
 					watch:['./'],
 					legacyWatch: true,
@@ -93,7 +93,7 @@ module.exports=function(grunt){
 				options:{
 					logConcurrentOutput:true
 				}
-			}		
+			}
 		}
 	})
 

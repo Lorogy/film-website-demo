@@ -36,7 +36,7 @@ module.exports=function(app){
 	app.delete('/admin/movie/list',User.signinRequired,User.adminRequired,Movie.del)
 
 	//Comment
-	app.post('/user/comment',User.signinRequired,Comment.save)	
+	app.post('/user/comment',User.signinRequired,Comment.save)
 
 	//Category
 	app.post('/admin/category',User.signinRequired,User.adminRequired,Category.save)
