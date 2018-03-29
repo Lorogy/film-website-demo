@@ -50,20 +50,20 @@ public/js/ js相关文件
 ## 项目展示
 普通用户
 
-![主页](./document/show/index.png)  
-![详情页](./document/show/detail.png)  
-![注册](./document/show/signup.png)  
-![登录](./document/show/signin.png)  
-![查询结果](./document/show/result.png)  
+主页<br>![主页](./document/show/index.png)  
+详情页<br>![详情页](./document/show/detail.png)  
+注册页<br>![注册](./document/show/signup.png)  
+登录页<br>![登录](./document/show/signin.png)  
+结果查询页<br>![查询结果](./document/show/result.png)  
 
 后台管理
 
-![用户列表](./document/show/userlist.png)  
-![后台录入](./document/show/movie.png)  
-![后台更新](./document/show/update.png)  
-![电影列表](./document/show/movielist.png)  
-![新增分类](./document/show/category.png)  
-![分类列表](./document/show/categorylist.png)  
+用户列表<br>![用户列表](./document/show/userlist.png)  
+后台录入<br>![后台录入](./document/show/movie.png)  
+后台更新<br>![后台更新](./document/show/update.png)  
+电影列表<br>![电影列表](./document/show/movielist.png)  
+分类增加<br>![新增分类](./document/show/category.png)  
+分类列表<br>![分类列表](./document/show/categorylist.png)  
 
 ## 接口
 localhost:3000  
