@@ -3,8 +3,6 @@
 > A node&mongodb project for film-website
 
 
-> https://github.com/Lorogy/film-website-demo.git
-
 ## 使用
 1.环境要求  
 mongodb、git、nodejs、express、bower  
