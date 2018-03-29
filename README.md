@@ -3,7 +3,7 @@
 > A node&mongodb project for film-website
 
 
-## https://github.com/Lorogy/film-website-demo.git
+> https://github.com/Lorogy/film-website-demo.git
 
 ## 使用
 1.环境要求  
@@ -48,7 +48,7 @@ public/libs/ bower安装的静态资源
 public/js/ js相关文件  
 
 ## 项目展示
-普通用户
+### 普通用户
 
 主页<br>![主页](./document/show/index.png)  
 详情页<br>![详情页](./document/show/detail.png)  
@@ -56,7 +56,7 @@ public/js/ js相关文件
 登录页<br>![登录](./document/show/signin.png)  
 结果查询页<br>![查询结果](./document/show/result.png)  
 
-后台管理
+### 后台管理
 
 用户列表<br>![用户列表](./document/show/userlist.png)  
 后台录入<br>![后台录入](./document/show/movie.png)  
