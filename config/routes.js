@@ -26,6 +26,7 @@ module.exports=function(app){
 	app.get('/signin',User.showSignin)
 	app.get('/logout',User.logout)
 	app.get('/admin/user/list',User.signinRequired,User.adminRequired,User.list)
+	app.delete('/admin/user/list',User.signinRequired,User.adminRequired,User.del)
 
 	//Movie
 	app.get('/movie/:id',Movie.detail)
@@ -42,6 +43,7 @@ module.exports=function(app){
 	app.post('/admin/category',User.signinRequired,User.adminRequired,Category.save)
 	app.get('/admin/category/new',User.signinRequired,User.adminRequired,Category.new)
 	app.get('/admin/category/list',User.signinRequired,User.adminRequired,Category.list)
+	app.delete('/admin/category/list',User.signinRequired,User.adminRequired,Category.del)
 
 	//results
 	app.get('/results',Index.search)

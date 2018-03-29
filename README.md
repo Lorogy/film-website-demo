@@ -7,7 +7,7 @@
 
 ## 使用
 1.环境要求  
-mongodb、git、nodejs、express、bower
+mongodb、git、nodejs、express、bower  
 2.安装依赖  
 `cnpm install`  
 3.安装静态资源  

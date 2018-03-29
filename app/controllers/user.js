@@ -121,3 +121,18 @@ exports.adminRequired=function(req,res,next){
 
 	next()		
 }
+
+exports.del=function(req,res){
+	var id=req.query.id;
+
+	if(id){
+		User.remove({_id:id},function(err,user){
+			if(err){
+				console.log(err)
+			}
+			else{
+				res.json({success:1})
+			}
+		})
+	}
+}
