@@ -63,6 +63,7 @@ app.use(session({
 app.listen(port)
 app.locals.moment=require('moment')
 
+//开发环境，配置调试信息输出
 var env=process.env.NODE_ENV || 'development'
 if('development'===env){
 	app.set('showStackError',true)

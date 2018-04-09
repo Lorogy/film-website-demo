@@ -24,20 +24,30 @@ bower 安装jQuery与bootstrap
 moment.js 时间格式化  
 mongodb mongoose 数据库  
 bcrypt 密码存储加密，加盐  
+connect-mongo express-session session持久化保存到mongodb数据库  
+morgan 日志中间件  
+body-parser 消息体解析中间件（json/buffer/text/utf-8）  
+serve-static 静态文件服务器  
+cookie-parser cookie解析器，req.cookie  
+connect-multiparty 后台文件上传中间件  
 
 
 ## grunt插件
 grunt-contrib-watch 实时监听各类文件变化  
 grunt-nodemon 实时监听入口文件app.js  
 grunt-concurrent 针对慢任务优化构建时间，跑多个组件任务  
+grunt-mocha-test 单元测试  
+grunt-contrib-jshint javascript语法检查  
+grunt-contrib-uglify 文件压缩  
+grunt-contrib-less 自动编译less文件为css  
 
 ## 文件
 app.js 入口文件  
 app/views/ 视图文件  
 app/schemas/ 数据库模式  
 app/models/ 数据库模型  
-app/controllers/ 相关方法封装，用于中间件  
-config/ 路由配置封装  
+app/controllers/ 控制层，相关方法封装，用于中间件  
+config/ 独立路由处理层 
 document/ 文档  
 public/build/ 编译压缩后的js、cssw文件  
 public/js/ js文件  
